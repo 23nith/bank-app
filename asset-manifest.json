@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-app/static/css/main.b13e7786.css",
-    "main.js": "/react-app/static/js/main.86c87663.js",
-    "index.html": "/react-app/index.html",
-    "main.b13e7786.css.map": "/react-app/static/css/main.b13e7786.css.map",
-    "main.86c87663.js.map": "/react-app/static/js/main.86c87663.js.map"
+    "main.css": "/bank-app/static/css/main.b13e7786.css",
+    "main.js": "/bank-app/static/js/main.86c87663.js",
+    "index.html": "/bank-app/index.html",
+    "main.b13e7786.css.map": "/bank-app/static/css/main.b13e7786.css.map",
+    "main.86c87663.js.map": "/bank-app/static/js/main.86c87663.js.map"
   },
   "entrypoints": [
     "static/css/main.b13e7786.css",
