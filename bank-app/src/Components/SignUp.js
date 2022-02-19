@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { useHistory } from "react-router-dom";
 
 const SignUp = ({handleSignUp}) => {
     const [firstName, setfirstName] = useState(null)
@@ -6,11 +7,12 @@ const SignUp = ({handleSignUp}) => {
     const [email, setemail] = useState(null)
     const [password, setpassword] = useState(null)
     const [initialDeposit, setinitialDeposit] = useState(null)
-
+    const history = useHistory();
     const handleSubmit = (e) =>{
         e.preventDefault();
         let id = Math.random();
         handleSignUp({id, firstName, lastName, email, password, balance: initialDeposit})
+        history.push("/bank-app");
     }
     const handleOnChange = (e) => {
         switch(e.target.id){
