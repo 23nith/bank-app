@@ -38,7 +38,7 @@ function App() {
   const handleSignUp = (object) => {
     console.log(object);
     let newUsers = [...users, object];
-    let obj = {users: [...users]}
+    let obj = {users: [...newUsers]}
     localStorage.setItem("data", JSON.stringify(obj))
     setusers(newUsers);
   }
