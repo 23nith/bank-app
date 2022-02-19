@@ -50,7 +50,7 @@ function App() {
         <div className="toCenter">
           <div className="container">
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/bank-app">
                 {showLogin && <Login handleLogin={handleLogin} showMsg={showMsg}/>}
                 {
                   showAcctInfo &&
