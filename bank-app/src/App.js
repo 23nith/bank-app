@@ -11,7 +11,7 @@ import useLink from "./Components/useLink";
 
 
 function App() {
-  const [users, setusers] = useState(JSON.parse(localStorage.getItem("data")).users);
+  const [users, setusers] = useState(JSON.parse(localStorage.getItem("bankdata")).users);
   const [currentUser, setCurrentUser] = useState(users[1]);
   const [showMsg, setShowMsg] = useState(false);
   const [showAcctInfo, setShowAcctInfo] = useState(false)
