@@ -61,7 +61,7 @@ function App() {
     console.log(object);
     let newUsers = [...users, object];
     let obj = {users: [...newUsers]}
-    localStorage.setItem("data", JSON.stringify(obj))
+    localStorage.setItem("bankdata", JSON.stringify(obj))
     setusers(newUsers);
   }
 
@@ -77,7 +77,7 @@ function App() {
     })
     setusers(modifiedUsers);
     let obj = {users: [...users]}
-    localStorage.setItem("data", JSON.stringify(obj))
+    localStorage.setItem("bankdata", JSON.stringify(obj))
   }
 
   const handleWithdraw = (withdrawValue) => {
@@ -92,7 +92,7 @@ function App() {
     })
     setusers(modifiedUsers);
     let obj = {users: [...users]}
-    localStorage.setItem("data", JSON.stringify(obj))
+    localStorage.setItem("bankdata", JSON.stringify(obj))
   }
 
   const handleSendMoney = (sendAmount, sendToID) => {
@@ -110,7 +110,7 @@ function App() {
     })
     setusers(modifiedUsers);
     let obj = {users: [...users]}
-    localStorage.setItem("data", JSON.stringify(obj))
+    localStorage.setItem("bankdata", JSON.stringify(obj))
   }
 
   const toggleListToShow = () => {
@@ -130,7 +130,7 @@ function App() {
     setExpenseTotal(getExpenseTotal(currentUser));
     setusers(modifiedUsers);
     let obj = {users: [...users]}
-    localStorage.setItem("data", JSON.stringify(obj))
+    localStorage.setItem("bankdata", JSON.stringify(obj))
   }
 
   const deleteExpense = (expenseID) => {
@@ -147,7 +147,7 @@ function App() {
     setExpenseTotal(getExpenseTotal(currentUser));
     setusers(modifiedUsers);
     let obj = {users: [...users]}
-    localStorage.setItem("data", JSON.stringify(obj))
+    localStorage.setItem("bankdata", JSON.stringify(obj))
   }
 
   const applyExpenses = () => {
@@ -163,7 +163,7 @@ function App() {
     setExpenseTotal(getExpenseTotal(currentUser));
     setusers(modifiedUsers);
     let obj = {users: [...users]}
-    localStorage.setItem("data", JSON.stringify(obj))
+    localStorage.setItem("bankdata", JSON.stringify(obj))
   }
 
   return (
