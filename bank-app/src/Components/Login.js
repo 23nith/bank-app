@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 const Login = ({handleLogin, showMsg}) => {
     const [name, setname] = useState(null);
     const [password, setpassword] = useState(null);
-    const [page, setpage] = useState("/")
 
     const handleOnChange = (e) => {
         if(e.target.id == "name"){
@@ -23,10 +22,9 @@ const Login = ({handleLogin, showMsg}) => {
     
 
     return (  
-        // <form className="signup" >
         <form className="signup" onSubmit={handleSubmit}>
 
-            {showMsg && <div>Wrong username or password</div>}
+            {showMsg && <div className="errorMsg">Wrong username or password</div>}
 
             <div>
                 <label htmlFor="name">Userame</label>
@@ -37,11 +35,10 @@ const Login = ({handleLogin, showMsg}) => {
                 <input type="password" id="password" onChange={handleOnChange}/>
             </div>
             <div>
-                {/* <Link to={page}><button>Login</button></Link> */}
-                <button>Login</button>
+                <button className="loginBtn">Login</button>
             </div>
             <div>
-                Don't have an account? <Link to="/SignUp">Sign up</Link>
+                Don't have an account? <Link to="/SignUp" className="signUpBtn">Sign up</Link>
             </div>
             
         </form>

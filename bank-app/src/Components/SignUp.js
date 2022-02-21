@@ -7,11 +7,12 @@ const SignUp = ({handleSignUp}) => {
     const [email, setemail] = useState(null)
     const [password, setpassword] = useState(null)
     const [initialDeposit, setinitialDeposit] = useState(null)
+    const [username, setUsername] = useState(null)
     const history = useHistory();
     const handleSubmit = (e) =>{
         e.preventDefault();
         let id = Math.random();
-        handleSignUp({id, firstName, lastName, email, password, balance: initialDeposit})
+        handleSignUp({id, username, firstName, lastName, email, password, balance: parseInt(initialDeposit), expenses: []} )
         history.push("/bank-app");
     }
     const handleOnChange = (e) => {
@@ -31,6 +32,9 @@ const SignUp = ({handleSignUp}) => {
             case "initialDeposit":
                 setinitialDeposit(e.target.value);
                 break;
+            case "username":
+                setUsername(e.target.value);
+                break;
         }
     }
     return ( 
@@ -48,6 +52,10 @@ const SignUp = ({handleSignUp}) => {
                 <input onChange={handleOnChange} required type="email" id="email"/>
             </div>
             <div>
+                <label htmlFor="username">Username</label>
+                <input onChange={handleOnChange} required type="text" id="username"/>
+            </div>
+            <div>
                 <label htmlFor="password">Password</label>
                 <input onChange={handleOnChange} required type="password" id="password"/>
             </div>
@@ -55,7 +63,9 @@ const SignUp = ({handleSignUp}) => {
                 <label htmlFor="initialDeposit" >Initial Deposit</label>
                 <input onChange={handleOnChange} required type="number" id="initialDeposit" min='1000' step='500' />
             </div>
-            <button>Submit</button>
+            <div className="modalSubmitBtn">
+                <button className="loginBtn">Submit</button>
+            </div>
         </form>
     );
 }
