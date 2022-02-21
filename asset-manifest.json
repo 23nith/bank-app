@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/bank-app/static/css/main.b13e7786.css",
-    "main.js": "/bank-app/static/js/main.43567eb1.js",
+    "main.css": "/bank-app/static/css/main.7f03cadc.css",
+    "main.js": "/bank-app/static/js/main.c1e7d60c.js",
     "index.html": "/bank-app/index.html",
-    "main.b13e7786.css.map": "/bank-app/static/css/main.b13e7786.css.map",
-    "main.43567eb1.js.map": "/bank-app/static/js/main.43567eb1.js.map"
+    "main.7f03cadc.css.map": "/bank-app/static/css/main.7f03cadc.css.map",
+    "main.c1e7d60c.js.map": "/bank-app/static/js/main.c1e7d60c.js.map"
   },
   "entrypoints": [
-    "static/css/main.b13e7786.css",
-    "static/js/main.43567eb1.js"
+    "static/css/main.7f03cadc.css",
+    "static/js/main.c1e7d60c.js"
   ]
 }
