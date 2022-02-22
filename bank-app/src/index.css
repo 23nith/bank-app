@@ -23,7 +23,6 @@ code {
 
 .navbar {
   position: fixed;
-  /* border: black solid 1px; */
   width: 100vw;
   padding: 10px 0;
   background-color: #255E56;
@@ -53,7 +52,6 @@ code {
 
 .dashboard {
   display: grid;
-  /* grid-template-columns: 1fr 1fr; */
   grid-template-columns: 2fr;
   grid-template-rows: 1fr 1fr;
 }
@@ -80,9 +78,7 @@ code {
 .user-list {
   border: solid black 1px;
   width: 100%;
-  /* height: 100%; */
   border-collapse: collapse;
-  /* margin: 0 auto; */
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
@@ -96,7 +92,6 @@ code {
   padding: 50px 20px;
   width: 300px;
   margin: 0 auto;
-  /* border: 1px solid black; */
   background-color: #CDE3E0;
   border-radius: 15px;
   color: #255E56;
@@ -110,21 +105,17 @@ code {
 
 .signup button {
   margin: 5px auto;
-  /* width: */
 }
 
 .NavMenu {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* border: solid black 1px; */
   background-color: #eeee;
-  /* width: 50%; */
   padding: 20px;
   gap: 20px;
 }
 
 .MenuBtn {
-  /* border: 1px solid black; */
   box-shadow: 2px 5px #888888;
   background-color: white;
   padding: 20px 30px;
@@ -134,22 +125,16 @@ code {
 }
 
 .MenuBtn i {
-  /* color: #666464; */
   color: #255E56;
 }
 
 .MenuBtn:active {
-  /* box-shadow: -2px -5px #888888; */
   box-shadow: 0px 0px #888888;
   background-color: #a6a5a4;
 }
 
 .AccountInfo {
-  /* border: solid black 1px; */
-  /* background-color: #76D3DE; */
-  /* width: 40%; */
   padding: 20px;
-  /* height: 100%; */
 }
 
 .row {
@@ -159,10 +144,7 @@ code {
 }
 
 .info1 {
-  /* flex-grow: 3;
-  flex-shrink: 3; */
   height: 60%;
-  /* border: solid black 1px; */
   font-size: 35px;
   margin-bottom: 20px;
 }
@@ -171,7 +153,6 @@ code {
   display: flex;
   flex-direction: column;
   height: 30%;
-  /* border: solid black 1px; */
   justify-content: flex-end;
 }
 
@@ -190,7 +171,6 @@ code {
 }
 
 .modalWindow {
-  /* border: 1px solid black; */
   border-radius: 25px;
   height: 200px;
   padding: 50px;
@@ -235,7 +215,6 @@ code {
 .yesOrNo {
   display: flex;
     width: 114px;
-    /* border: solid black 1px; */
     margin: 30px auto;
     justify-content: space-around;
 }
