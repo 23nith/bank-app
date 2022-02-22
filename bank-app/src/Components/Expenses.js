@@ -46,8 +46,7 @@ const Expenses = ({currentUser, expenseTotal, AddExpense, deleteExpense}) => {
                     {userExpenses.map(userExpense => (
                         <tr key={userExpense.expenseID}>
                             <td>{userExpense.expenseName}</td>
-                            <td>{userExpense.amount}</td>
-                            {/* <td className="delete"><button onClick={()=>{handleDelete(userExpense.expenseID)}}>delete</button></td> */}
+                            <td>{`$ ${userExpense.amount}`}</td>
                             <td className="delete"><i class="fas fa-trash-alt" onClick={()=>{handleDelete(userExpense.expenseID)}}></i></td>
                         </tr>
                     ))}
@@ -55,7 +54,7 @@ const Expenses = ({currentUser, expenseTotal, AddExpense, deleteExpense}) => {
                 <tfoot>
                     <tr>
                         <td>Total</td>
-                        <td>{expenseTotal}</td>
+                        <td>{`$ ${expenseTotal}`}</td>
                         <td></td>
                     </tr>
                 </tfoot>
@@ -73,7 +72,7 @@ const Expenses = ({currentUser, expenseTotal, AddExpense, deleteExpense}) => {
                 <br />
                 <div className="modalInputToCenter">
                     <label htmlFor="expenseAmount">Expense Amount </label>
-                    <input type="number" id="expenseAmount" required onChange={handleOnChangeExpenseAmount}/>
+                    <input type="number" id="expenseAmount" min="1" required onChange={handleOnChangeExpenseAmount}/>
                 </div>
                 <br />
                 <div className="modalSubmitBtn">

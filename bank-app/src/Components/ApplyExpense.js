@@ -3,7 +3,6 @@ import { useState } from "react";
 const ApplyExpense = ({handleOnClickApplyExpense, applyExpenses}) => {
 
     const handleOnClickYes = () => {
-        // e.preventDefault();
         applyExpenses();
         handleOnClickApplyExpense();
     }
