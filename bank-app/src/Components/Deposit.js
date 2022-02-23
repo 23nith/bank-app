@@ -21,9 +21,9 @@ const Deposit = ({handleDeposit, handleOnClickDeposit}) => {
         <form className="modal" onSubmit={handleOnSubmit} onClick={handleOnClickDeposit}>
             <div className="modalWindow" onClick={stopBubbling}>
                 <label htmlFor="depositAmount">Deposit Amount </label>
-                <input type="number" id="depositAmount" onChange={handleOnChange} min="1"/>
+                <input type="number" id="depositAmount" required onChange={handleOnChange} min="1"/>
                 <div className="modalSubmitBtn">
-                    <button>Submit</button>
+                    <button className="generalBtn">Submit</button>
                 </div>
             </div>
         </form>

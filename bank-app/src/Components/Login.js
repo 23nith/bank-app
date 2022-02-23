@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 
-const Login = ({handleLogin, showMsg}) => {
+const Login = ({handleLogin, showMsg, setShowMsg}) => {
     const [name, setname] = useState(null);
     const [password, setpassword] = useState(null);
 
@@ -19,6 +19,13 @@ const Login = ({handleLogin, showMsg}) => {
         handleLogin({name, password})
     }
 
+    useEffect(()=>{
+        function removeShowMsg(){
+            setShowMsg(false);
+            console.log("login unmounted")
+        }
+        return removeShowMsg
+    }, [])
     
 
     return (  
@@ -28,11 +35,11 @@ const Login = ({handleLogin, showMsg}) => {
 
             <div>
                 <label htmlFor="name">Userame</label>
-                <input type="text" id="name" onChange={handleOnChange}/>
+                <input type="text" id="name" required onChange={handleOnChange}/>
             </div>
             <div>
                 <label htmlFor="password">Password</label>
-                <input type="password" id="password" onChange={handleOnChange}/>
+                <input type="password" id="password" required onChange={handleOnChange}/>
             </div>
             <div>
                 <button className="loginBtn">Login</button>

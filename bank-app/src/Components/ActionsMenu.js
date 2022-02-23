@@ -2,7 +2,7 @@ import Deposit from "./Deposit";
 import Withdraw from "./Withdraw";
 import { useState } from "react";
 import SendMoney from "./SendMoney";
-import ApplyExpense from "./ApplyExpense";
+import ConfirmationMessage from "./ConfirmationMessage";
 
 const ActionsMenu = ({handleDeposit, handleWithdraw, handleSendMoney, users, applyExpenses, currentUser}) => {
     const [showDeposit, setShowDeposit] = useState(false)
@@ -28,17 +28,17 @@ const ActionsMenu = ({handleDeposit, handleWithdraw, handleSendMoney, users, app
 
     return (  
         <div className="NavMenu">
-            <div className="MenuBtn" onClick={handleOnClickDeposit}><i class="fas fa-piggy-bank"></i><br/>Deposit</div>
+            <div className="MenuBtn" onClick={handleOnClickDeposit}><i className="fas fa-piggy-bank"></i><br/>Deposit</div>
             {showDeposit && <Deposit handleDeposit={handleDeposit} handleOnClickDeposit={handleOnClickDeposit}/>}
 
-            <div className="MenuBtn" onClick={handleOnClickSendMoney}><i class="fas fa-exchange-alt"></i><br/>Send Money</div>
+            <div className="MenuBtn" onClick={handleOnClickSendMoney}><i className="fas fa-exchange-alt"></i><br/>Send Money</div>
             {showSendMoney && <SendMoney handleSendMoney={handleSendMoney} handleOnClickSendMoney={handleOnClickSendMoney} users={users} currentUser={currentUser}/>}
 
-            <div className="MenuBtn" onClick={handleOnClickWithdraw}><i class="fas fa-money-bill-wave"></i><br/>Withdraw</div>
-            {showWithdraw && <Withdraw handleWithdraw={handleWithdraw} handleOnClickWithdraw={handleOnClickWithdraw}/>}
+            <div className="MenuBtn" onClick={handleOnClickWithdraw}><i className="fas fa-money-bill-wave"></i><br/>Withdraw</div>
+            {showWithdraw && <Withdraw handleWithdraw={handleWithdraw} handleOnClickWithdraw={handleOnClickWithdraw} currentUser={currentUser}/>}
 
-            <div className="MenuBtn" onClick={handleOnClickApplyExpense}><i class="fas fa-cash-register"></i><br/>Apply Expenses</div>
-            {showApplyExpense && <ApplyExpense applyExpenses={applyExpenses} handleOnClickApplyExpense={handleOnClickApplyExpense}/>}
+            <div className="MenuBtn" onClick={handleOnClickApplyExpense}><i className="fas fa-cash-register"></i><br/>Apply Expenses</div>
+            {showApplyExpense && <ConfirmationMessage applyFunction={applyExpenses} handleOnClickToggle={handleOnClickApplyExpense} msg={"Are you sure you want to apply all listed expenses?"}/>}
             
         </div>
     );

@@ -25,7 +25,17 @@ code {
   position: fixed;
   width: 100vw;
   padding: 10px 0;
-  background-color: #255E56;
+  background-color: #00294e;
+}
+
+.footer {
+  width: 100vw;
+  height: 40px;
+  padding: 10px 0;
+  /* background-color: #516576; */
+  background-color: #0d3457;
+  position: absolute;
+  bottom: 0;
 }
 
 .navbar i {
@@ -54,12 +64,13 @@ code {
   display: grid;
   grid-template-columns: 2fr;
   grid-template-rows: 1fr 1fr;
+  /* color: #516576; */
 }
 
 .firstRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-
+  min-height: 289px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
@@ -73,6 +84,11 @@ code {
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.toggleList:active {
+  box-shadow: none;
 }
 
 .user-list {
@@ -83,18 +99,20 @@ code {
 }
 
 .user-list td, .user-list th{
-  padding: 0 10px;
-  border: 1px solid white;
-  background-color: #eeee;
+  padding: 5px 10px;
+  border: 1px solid #dedddc;
+  /* background-color: #eeee; */
+  background-color: white;
 }
 
 .signup {
   padding: 50px 20px;
   width: 300px;
   margin: 0 auto;
-  background-color: #CDE3E0;
+  /* background-color: #CDE3E0; */
+  background-color: #ebebeb;
   border-radius: 15px;
-  color: #255E56;
+  color: #00294e;
 }
 
 .signup div{
@@ -122,19 +140,34 @@ code {
   border-radius: 15px;
   cursor: pointer;
   text-align: center;
+  color: #516576;
 }
 
 .MenuBtn i {
-  color: #255E56;
+  /* color: #aa0b3c; */
+  color: #516576;
+  /* color: #888888; */
 }
 
 .MenuBtn:active {
   box-shadow: 0px 0px #888888;
-  background-color: #a6a5a4;
+  /* background-color: #a6a5a4; */
+  background-color: grey;
+}
+
+.MenuBtn:hover {
+  /* box-shadow: 0px 0px #888888; */
+  /* background-color: #faf7f5; */
+  /* color: white; */
+}
+
+.MenuBtn i:hover {
+  /* color: #aa0b3c; */
 }
 
 .AccountInfo {
   padding: 20px;
+  background-color: rgba(255,255,255, 1);
 }
 
 .row {
@@ -184,12 +217,13 @@ code {
 
 .delete i {
   font-size: 20px;
-  color: #f44336;
+  /* color: #f44336; */
+  color: #516576;
 }
 
 .visa i{
   font-size: 45px;
-  color: #255E56
+  color: #00294e
 }
 
 .addExpense {
@@ -214,9 +248,9 @@ code {
 
 .yesOrNo {
   display: flex;
-    width: 114px;
-    margin: 30px auto;
-    justify-content: space-around;
+  width: 175px;
+  margin: 30px auto;
+  justify-content: space-around;
 }
 
 input {
@@ -235,8 +269,10 @@ input {
 }
 
 .sendMoneyToCenter {
-  width: 150px;
-  margin: 20px auto 0 auto;
+  width: 207px;
+    margin: 23px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .modalInputToCenter {
@@ -246,13 +282,62 @@ input {
 }
 
 .signUpBtn {
-  color: #255E56;
+  color: #00294e;
 }
 
 .loginBtn {
-  background-color: #255E57;
+  background-color: #00294e;
   border: none;
   padding: 5px 20px;
   color: white;
   border-radius: 5px;
+}
+
+.insufficientFunds {
+  padding: 0 60px;
+  color: red;
+  font-size: 25px;
+}
+
+.generalBtn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.generalBtn:active {
+  background-color: grey;
+  color: white;
+}
+
+.navbar i {
+  padding: 0 10px;
+}
+
+.whiteBtn {
+  border: #00294e solid 1.5px;
+  /* border: none; */
+  padding: 5px 20px;
+  background-color: white;
+  color: #00294e;
+  border-radius: 5px;
+}
+
+.signUpBtns {
+  width: 213px;
+  margin: 20px auto;
+}
+
+.edit {
+  width: 20px;
+}
+
+.edit i {
+  font-size: 20px;
+  /* color: orange; */
+  color: #516576;
+}
+
+.edit i:active {
+  color: blue;
 }

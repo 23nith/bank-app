@@ -9,12 +9,14 @@ const SignUp = ({handleSignUp}) => {
     const [initialDeposit, setinitialDeposit] = useState(null)
     const [username, setUsername] = useState(null)
     const history = useHistory();
+
     const handleSubmit = (e) =>{
         e.preventDefault();
         let id = Math.random();
         handleSignUp({id, username, firstName, lastName, email, password, balance: parseInt(initialDeposit), expenses: []} )
         history.push("/bank-app");
     }
+
     const handleOnChange = (e) => {
         switch(e.target.id){
             case "firstName":
@@ -37,6 +39,11 @@ const SignUp = ({handleSignUp}) => {
                 break;
         }
     }
+
+    const handleBack = () => {
+        history.push("/bank-app");
+    }
+
     return ( 
         <form className="signup" onSubmit={handleSubmit}>
             <div>
@@ -63,11 +70,15 @@ const SignUp = ({handleSignUp}) => {
                 <label htmlFor="initialDeposit" >Initial Deposit</label>
                 <input onChange={handleOnChange} required type="number" id="initialDeposit" min='1000' step='500' />
             </div>
-            <div className="modalSubmitBtn">
+            <div className="signUpBtns">
                 <button className="loginBtn">Submit</button>
+                <button onClick={handleBack} className="whiteBtn">Back</button>
             </div>
         </form>
     );
+
+    
+
 }
  
 export default SignUp;

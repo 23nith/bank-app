@@ -8,7 +8,16 @@ import SignUp from "./Components/SignUp";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import UserList from "./Components/UserList";
 import useLink from "./Components/useLink";
+import Footer from "./Components/Footer";
 
+const bankPicture = new URL('./images/BankBGPictureBright.png', import.meta.url);
+// const bankPicture = new URL('./images/BankBGPictureDark.png', import.meta.url);
+// const bankPicture = new URL('./images/BankBGPictureDarker.png', import.meta.url);
+// const bankPicture = new URL('./images/BankBGPicture.jpg', import.meta.url);
+const bankIcon = new URL('./images/BankIcon.png', import.meta.url);
+const pattern7 = new URL('./images/pattern7.png', import.meta.url);
+const pattern8 = new URL('./images/pattern8.png', import.meta.url);
+const visaImage = new URL('./images/visa.png', import.meta.url);
 
 function App() {
   const [users, setusers] = useState(JSON.parse(localStorage.getItem("bankdata")).users);
@@ -119,7 +128,6 @@ function App() {
   }
 
   const AddExpense = (newExpense) => {
-    console.log("test 2")
     let newUsers = [...users];
     let modifiedUsers = newUsers.map((user)=>{
       if(user.id == currentUser.id){
@@ -150,6 +158,27 @@ function App() {
     localStorage.setItem("bankdata", JSON.stringify(obj))
   }
 
+  const editExpense = (expenseToEdit) => {
+    let newUsers = [...users];
+    let modifiedUsers = newUsers.map((user)=>{
+      if(user.id == currentUser.id){
+        let modifiedExpense = user.expenses.map((expense)=>{
+          if(expense.expenseID == expenseToEdit.expenseID){
+            expense.amount = expenseToEdit.amount;
+            expense.expenseName = expenseToEdit.expenseName;
+          }
+          return expense;
+        })
+        user.expense = modifiedExpense;
+      }
+      return user;
+    })
+    setExpenseTotal(getExpenseTotal(currentUser));
+    setusers(modifiedUsers);
+    let obj = {users: [...users]}
+    localStorage.setItem("bankdata", JSON.stringify(obj))
+  }
+
   const applyExpenses = () => {
     console.log("apply expense")
     let newUsers = [...users];
@@ -168,25 +197,24 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <NavBar handleLogout={handleLogout} showLogin={showLogin}/>
+      <div className="App" style={{background: `url(${bankPicture})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+        <NavBar handleLogout={handleLogout} showLogin={showLogin} bankIcon={bankIcon} pattern7={pattern7}/>
         <div className="toCenter">
           <div className="container">
             <Switch>
               <Route exact path="/bank-app">
-                {showLogin && <Login handleLogin={handleLogin} showMsg={showMsg}/>}
+                {showLogin && <Login handleLogin={handleLogin} showMsg={showMsg} setShowMsg={setShowMsg}/>}
                 {
                   showAcctInfo &&
                   <div className="dashboard">
                     <div className="firstRow">
-                      <AccountInfo user={currentUser} expenseTotal={expenseTotal}/>
-                      <ActionsMenu handleDeposit={handleDeposit} handleWithdraw={handleWithdraw} handleSendMoney={handleSendMoney} users={users} applyExpenses={applyExpenses} currentUser={currentUser}/>
-
+                      <AccountInfo visaImage={visaImage} user={currentUser}/>
+                      <ActionsMenu currentUser={currentUser} handleDeposit={handleDeposit} handleWithdraw={handleWithdraw} handleSendMoney={handleSendMoney} users={users} applyExpenses={applyExpenses} currentUser={currentUser}/>
                     </div>
                     <div className="secondRow">
                       <button className="toggleList" onClick={toggleListToShow}>{showExpense ? "Show User List" : "Show Expense"}</button>
                       {showUserList && <UserList users={users}/>}
-                      {showExpense && <Expenses currentUser={currentUser} expenseTotal={expenseTotal} AddExpense={AddExpense} deleteExpense={deleteExpense}/>}
+                      {showExpense && <Expenses editExpense={editExpense} currentUser={currentUser} expenseTotal={expenseTotal} AddExpense={AddExpense} deleteExpense={deleteExpense}/>}
                     </div>
                   </div>
                 }
@@ -197,6 +225,7 @@ function App() {
             </Switch>
           </div>
         </div>
+        <Footer pattern8={pattern8}/>
       </div>
     </Router>
   );
