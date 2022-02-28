@@ -15,7 +15,6 @@ const Login = ({handleLogin, showMsg, setShowMsg}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
         handleLogin({name, password})
     }
 
