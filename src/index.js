@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 
 
+// TODO: Relocate to didMount effect on root App component
 let test = localStorage.getItem("bankdata");
 let obj = {users: [
   {id: 1, username: "JohnD", firstName: "John", lastName: "Doe", email: "john@gmail.com", password: "1234", balance: 500, expenses: [{expenseName: "Electricity bill", amount: 500, expenseID: 1}]},
