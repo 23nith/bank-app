@@ -11,9 +11,6 @@ import useLink from "./Components/useLink";
 import Footer from "./Components/Footer";
 
 const bankPicture = new URL('./images/BankBGPictureBright.png', import.meta.url);
-// const bankPicture = new URL('./images/BankBGPictureDark.png', import.meta.url);
-// const bankPicture = new URL('./images/BankBGPictureDarker.png', import.meta.url);
-// const bankPicture = new URL('./images/BankBGPicture.jpg', import.meta.url);
 const bankIcon = new URL('./images/BankIcon.png', import.meta.url);
 const pattern7 = new URL('./images/pattern7.png', import.meta.url);
 const pattern8 = new URL('./images/pattern8.png', import.meta.url);
