@@ -371,6 +371,7 @@ input {
   }
   .AccountInfo {
     min-width: auto;
+    
   }
   .NavMenu {
     min-width: auto;
@@ -389,6 +390,10 @@ input {
   }
   .expenses {
     width: 90%;
+  }
+
+  .AccountInfo {
+    height: 250px;
   }
 }
 
