@@ -1,6 +1,5 @@
-// const visaImage = new URL('./images/visa.png', import.meta.url);
-
 const AccountInfo = ({user, visaImage, expenseTotal}) => {
+
     return ( 
         <div className="AccountInfo">
             <div className="info1">{`$ ${user.balance}`}</div>
@@ -12,7 +11,6 @@ const AccountInfo = ({user, visaImage, expenseTotal}) => {
                         <div>{`${user.firstName} ${user.lastName}`}</div>
 
                     </div>
-                    {/* <div className="visa"><i className="fab fa-cc-visa"></i></div> */}
                     <div>
                         <img src={visaImage} alt="" style={{height: "65px"}} />
                     </div>

@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import ActionsMenu from "./Components/ActionsMenu";
 import AccountInfo from "./Components/AccountInfo";
 import Expenses from "./Components/Expenses";
@@ -11,9 +11,6 @@ import useLink from "./Components/useLink";
 import Footer from "./Components/Footer";
 
 const bankPicture = new URL('./images/BankBGPictureBright.png', import.meta.url);
-// const bankPicture = new URL('./images/BankBGPictureDark.png', import.meta.url);
-// const bankPicture = new URL('./images/BankBGPictureDarker.png', import.meta.url);
-// const bankPicture = new URL('./images/BankBGPicture.jpg', import.meta.url);
 const bankIcon = new URL('./images/BankIcon.png', import.meta.url);
 const pattern7 = new URL('./images/pattern7.png', import.meta.url);
 const pattern8 = new URL('./images/pattern8.png', import.meta.url);
@@ -194,6 +191,17 @@ function App() {
     let obj = {users: [...users]}
     localStorage.setItem("bankdata", JSON.stringify(obj))
   }
+
+  useEffect(()=> {
+    let test = localStorage.getItem("bankdata");
+    let obj = {users: [
+      {id: 1, username: "JohnD", firstName: "John", lastName: "Doe", email: "john@gmail.com", password: "1234", balance: 500, expenses: [{expenseName: "Electricity bill", amount: 500, expenseID: 1}]},
+      {id: 2, username: "JaneD", firstName: "Jane", lastName: "Doe", email: "jane@gmail.com", password: "4321", balance: 1000, expenses: []}
+    ]}
+    if(test == null){
+      localStorage.setItem('bankdata', JSON.stringify(obj))
+    }
+  }, [])
 
   return (
     <Router>

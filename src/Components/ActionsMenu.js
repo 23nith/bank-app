@@ -1,7 +1,7 @@
-import Deposit from "./Deposit";
-import Withdraw from "./Withdraw";
+import Deposit from "./Actions_Menu/Deposit";
+import Withdraw from "./Actions_Menu/Withdraw";
 import { useState } from "react";
-import SendMoney from "./SendMoney";
+import SendMoney from "./Actions_Menu/SendMoney";
 import ConfirmationMessage from "./ConfirmationMessage";
 
 const ActionsMenu = ({handleDeposit, handleWithdraw, handleSendMoney, users, applyExpenses, currentUser}) => {
