@@ -76,7 +76,7 @@ const Expenses = ({currentUser, expenseTotal, AddExpense, deleteExpense, editExp
     }
 
     return (  
-        <div className="expenses">
+        <div className="expenses" style={{width: "600px"}}>
             {showConfirm && <ConfirmationMessage handleOnClickToggle={handleOnClickDeleteExpense} applyFunction={handleDelete} msg={`Are you sure you want to delete "${toDelete.expenseName}" expense amounting to $${toDelete.amount}?`}/>}
             <table className="user-list">
                 <thead>
