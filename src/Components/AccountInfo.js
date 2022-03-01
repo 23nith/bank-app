@@ -1,4 +1,5 @@
-const AccountInfo = ({user, visaImage}) => {
+const AccountInfo = ({user, visaImage, expenseTotal}) => {
+
     return ( 
         <div className="AccountInfo">
             <div className="info1">{`$ ${user.balance}`}</div>
