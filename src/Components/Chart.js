@@ -37,7 +37,18 @@ export function Chart({currentUser}) {
         },
     ],
     };
-  return <Pie data={data}/>;
+  return <Pie data={data}
+    options={{plugins: {
+      legend: {
+        labels: {
+          color: 'black',
+          font: {
+            size: 18
+          }
+        }
+      }
+    }}}
+  />;
 }
 
 export default Chart

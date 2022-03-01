@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   user-select: none;
+  /* overflow: scroll; */
 }
 
 i {
@@ -45,10 +46,10 @@ code {
 .toCenter {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
   margin: 0;
   padding: 0;
+  overflow: auto;
 }
 
 .button {
@@ -61,18 +62,22 @@ code {
 }
 
 .dashboard {
-  display: grid;
-  grid-template-columns: 2fr;
+  display: flex;
+  flex-direction: column;
+  /* grid-template-columns: 2fr; */
   /* grid-template-rows: 1fr 1fr; */
   /* color: #516576; */
 }
 
 .firstRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 289px;
-  max-height: 289px;
+  display: flex;
+  /* grid-template-columns: 1fr 1fr; */
+  max-width: 880px;
+  flex-direction: row;
+  /* min-height: 289px;
+  max-height: 289px; */
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin: 0 auto;
 }
 
 .secondRow {
@@ -132,6 +137,7 @@ code {
   background-color: #eeee;
   padding: 20px;
   gap: 20px;
+  min-width: 400px;
 }
 
 .MenuBtn {
@@ -169,6 +175,7 @@ code {
 .AccountInfo {
   padding: 20px;
   background-color: rgba(255,255,255, 1);
+  min-width: 400px;
 }
 
 .row {
@@ -341,4 +348,55 @@ input {
 
 .edit i:active {
   color: blue;
+}
+
+.expenseRow {
+  display: "flex"; 
+  flex-direction: "row" !important; 
+  /* width: "100%" */
+}
+
+.expenses {
+  margin: 0 auto;
+}
+
+.chart {
+  margin: 0 auto;
+}
+
+
+@media screen and (max-width: 450px){
+  .firstRow {
+    width: 100vw;
+  }
+  .AccountInfo {
+    min-width: auto;
+  }
+  .NavMenu {
+    min-width: auto;
+  }
+}
+
+@media screen and (max-width: 880px){
+  .firstRow {
+    flex-direction: column;
+  }
+  .firstRow div {
+    min-width: none;
+  }
+  .NavMenu {
+    grid-template-columns: 1fr;
+  }
+  .expenses {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1010px){
+  .expenseRow {
+    flex-direction: column;
+  }
+  .expenses {
+    width: 90%;
+  }
 }

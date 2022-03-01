@@ -204,12 +204,23 @@ function App() {
     }
   }, [])
 
+  useEffect(()=>{
+    if(showAcctInfo == false){
+      document.querySelector(".toCenter").style.alignItems = "center";
+      console.log("align items center")
+    }else{
+      document.querySelector(".toCenter").style.alignItems = "normal";
+      console.log("align items none")
+    }
+  }, [showAcctInfo])
+
   return (
     <Router>
       <div className="App" style={{background: `url(${bankPicture})`, backgroundSize: "cover", backgroundPosition: "center"}}>
         <NavBar handleLogout={handleLogout} showLogin={showLogin} bankIcon={bankIcon} pattern7={pattern7}/>
         <div className="toCenter">
           <div className="container">
+                <div style={{padding: "50px"}}></div>
             <Switch>
               <Route exact path="/bank-app">
                 {showLogin && <Login handleLogin={handleLogin} showMsg={showMsg} setShowMsg={setShowMsg}/>}
@@ -225,9 +236,9 @@ function App() {
                       {showUserList && <UserList users={users}/>}
                       {showExpense && 
                       <>
-                        <div style={{display: "flex", flexDirection: "row", width: "100%"}}>
+                        <div className="expenseRow" style={{display: "flex"}}>
                           <Expenses editExpense={editExpense} currentUser={currentUser} expenseTotal={expenseTotal} AddExpense={AddExpense} deleteExpense={deleteExpense}/>
-                          <div style={{height: "400px", width: "400px"}}>
+                          <div className="chart" style={{height: "400px", width: "400px"}}>
                             <Chart currentUser={currentUser}/>
                           </div>
                         </div>
@@ -242,6 +253,7 @@ function App() {
                 <SignUp handleSignUp={handleSignUp}/>
               </Route>
             </Switch>
+                <div style={{padding: "50px"}}></div>
           </div>
         </div>
         <Footer pattern8={pattern8}/>
