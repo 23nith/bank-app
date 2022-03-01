@@ -208,7 +208,7 @@ function App() {
                   showAcctInfo &&
                   <div className="dashboard">
                     <div className="firstRow">
-                      <AccountInfo visaImage={visaImage} user={currentUser}/>
+                      <AccountInfo visaImage={visaImage} user={currentUser} expenseTotal={expenseTotal}/>
                       <ActionsMenu currentUser={currentUser} handleDeposit={handleDeposit} handleWithdraw={handleWithdraw} handleSendMoney={handleSendMoney} users={users} applyExpenses={applyExpenses} currentUser={currentUser}/>
                     </div>
                     <div className="secondRow">

@@ -55,7 +55,7 @@ const Expenses = ({currentUser, expenseTotal, AddExpense, deleteExpense, editExp
     }
 
     useEffect(()=>{
-        if(showAddExpense == false){
+        if(showAddExpense === false){
             setToEdit(false);
             setExpenseAmount("");
             setExpenseName("");
@@ -99,8 +99,14 @@ const Expenses = ({currentUser, expenseTotal, AddExpense, deleteExpense, editExp
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td>Total</td>
-                        <td>{`$ ${expenseTotal}`}</td>
+                        <td style={{fontWeight: "bolder"}}><span style={{marginLeft: "5px"}}>Total</span></td>
+                        <td style={{borderTop: "solid black 1px"}}>{`$ ${expenseTotal}`}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style={{fontWeight: "bolder"}}><span style={{marginLeft: "5px"}}>Total Current Balance after Expenses</span></td>
+                        <td>{`$ ${currentUser.balance - expenseTotal}`}</td>
                         <td></td>
                         <td></td>
                     </tr>
