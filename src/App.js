@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import UserList from "./Components/UserList";
 import useLink from "./Components/useLink";
 import Footer from "./Components/Footer";
+import Chart from "./Components/Chart";
 
 const bankPicture = new URL('./images/BankBGPictureBright.png', import.meta.url);
 // const bankPicture = new URL('./images/BankBGPictureDark.png', import.meta.url);
@@ -214,7 +215,17 @@ function App() {
                     <div className="secondRow">
                       <button className="toggleList" onClick={toggleListToShow}>{showExpense ? "Show User List" : "Show Expense"}</button>
                       {showUserList && <UserList users={users}/>}
-                      {showExpense && <Expenses editExpense={editExpense} currentUser={currentUser} expenseTotal={expenseTotal} AddExpense={AddExpense} deleteExpense={deleteExpense}/>}
+                      {showExpense && 
+                      <>
+                        <div style={{display: "flex", flexDirection: "row", width: "100%"}}>
+                          <Expenses editExpense={editExpense} currentUser={currentUser} expenseTotal={expenseTotal} AddExpense={AddExpense} deleteExpense={deleteExpense}/>
+                          <div style={{height: "400px", width: "400px"}}>
+                            <Chart currentUser={currentUser}/>
+                          </div>
+                        </div>
+                      </>
+                      
+                    }
                     </div>
                   </div>
                 }
