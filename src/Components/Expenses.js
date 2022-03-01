@@ -106,7 +106,7 @@ const Expenses = ({currentUser, expenseTotal, AddExpense, deleteExpense, editExp
                     </tr>
                     <tr>
                         <td style={{fontWeight: "bolder"}}><span style={{marginLeft: "5px"}}>Total Current Balance after Expenses</span></td>
-                        <td>{`$ ${currentUser.balance - expenseTotal}`}</td>
+                        <td style={{fontWeight: "bolder"}}>{`$ ${currentUser.balance - expenseTotal}`}</td>
                         <td></td>
                         <td></td>
                     </tr>
