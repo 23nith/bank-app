@@ -12,10 +12,6 @@ const NavBar = ({handleLogout, showLogin, bankIcon, pattern7}) => {
             <div className="container row">
                 <Link to='/bank-app'>
                     <i className="fa fa-university"></i>
-                    {/* <div style={{color: "white"}}>
-                    <img src={bankIcon} alt="" style={{height: '50px', width: "50px", zIndex: 2}} />    
-                        Bank of the East   
-                    </div> */}
                 </Link>
                 {!showLogin && <div className='button signout' onClick={handleLogout}><i className="fas fa-sign-out-alt"></i></div>}
             </div>
