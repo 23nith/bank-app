@@ -3,7 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-
+let test = localStorage.getItem("bankdata");
+let obj = {users: [
+  {id: 1, username: "JohnD", firstName: "John", lastName: "Doe", email: "john@gmail.com", password: "1234", balance: 500, expenses: [{expenseName: "Electricity bill", amount: 500, expenseID: 1}]},
+  {id: 2, username: "JaneD", firstName: "Jane", lastName: "Doe", email: "jane@gmail.com", password: "4321", balance: 1000, expenses: []}
+]}
+if(test == null){
+  localStorage.setItem('bankdata', JSON.stringify(obj))
+}
 
 
 ReactDOM.render(
